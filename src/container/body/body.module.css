@@ -1,0 +1,33 @@
+.heading {
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: start;
+  padding-left: 0%;
+  margin-bottom: 22px;
+}
+
+.heading span {
+  text-align: start;
+  padding-left: 13px;
+  padding-top: 10px;
+  padding-bottom: 2px;
+  width: 100%;
+  font: bold;
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: block;
+  text-align: start;
+}
+.table_style {
+  margin: 0px 23px 0px 23px;
+  border: 2px solid rgb(209, 207, 207);
+  border-radius: 0.4rem;
+}
+
+/* .sudoeffect:nth-child(even) {
+  background-color: gray;
+}
+.sudoeffect:nth-child(odd) {
+  background-color: rgb(255, 246, 246);
+} */

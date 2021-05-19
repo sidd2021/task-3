@@ -1,0 +1,84 @@
+.main {
+  margin: 0px 0px 0px 20px;
+  color: rgb(95, 93, 93);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+h1 {
+  color: black;
+  font-size: 2rem;
+  margin-top: 0rem;
+}
+.form {
+  padding: 0px 0px 10px 60px;
+  margin: 0rem 0rem 0rem 1rem;
+}
+
+.form label {
+  display: block;
+  padding-bottom: 10px;
+  padding-top: 8px;
+}
+.form input {
+  width: 80%;
+  height: 30px;
+}
+.form select {
+  width: 80.5%;
+  height: 37px;
+}
+.form option {
+  font-size: 1.2rem;
+  margin: 1rem;
+  border: 2px solid red;
+}
+.buttons {
+  margin-top: 1rem;
+}
+.buttons button {
+  margin-right: 1.3rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding: 5px 9px 5px 9px;
+  outline: none;
+  box-shadow: none;
+  width: 120px;
+  height: 40px;
+  border: none;
+}
+.b1 {
+  color: #fff;
+  background-color: #0275d8;
+  border-color: #0275d8;
+}
+.b3 {
+  background-color: rgba(206, 204, 193, 0.5);
+  background-image: none;
+}
+.b2 {
+  background-color: rgba(206, 204, 193, 0.5);
+  background-image: none;
+}
+.b1:active,
+.b2:active,
+.b3:active {
+  transform: scale(0.98);
+  /* box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.24); */
+  border: 1px solid black;
+  /* Lowering the shadow */
+}
+option {
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(202, 28, 28, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.icons {
+  padding-right: 5px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}

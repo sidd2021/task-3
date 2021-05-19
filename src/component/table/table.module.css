@@ -1,0 +1,6 @@
+ul:nth-child(even) {
+  background-color: rgba(219, 216, 216, 0.158);
+}
+ul:nth-child(odd) {
+  background-color: rgba(221, 219, 219, 0.452);
+}

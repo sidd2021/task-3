@@ -1,0 +1,47 @@
+.cource {
+  padding: 1rem;
+}
+.cource span {
+  font-size: 2.9rem;
+  font-weight: bold;
+}
+.buttons {
+  margin-top: 30px;
+}
+.buttons button {
+  margin: 0.4rem;
+  padding: 0.7rem;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 400;
+  border: 1px solid transparent;
+}
+
+.fontAwsome {
+  padding-right: 4px;
+  size: 1.2rem;
+}
+
+.New {
+  background: blue;
+  color: white;
+}
+.Edit {
+  background: rgba(236, 159, 16, 0.836);
+  color: white;
+  outline: rgb(248, 161, 0);
+}
+.Delete {
+  background: rgb(233, 85, 80);
+  color: white;
+  outline: brown;
+}
+.New:hover {
+  background: rgba(14, 14, 221, 0.952);
+}
+.Edit:hover {
+  background: rgb(240, 157, 4);
+}
+.Delete:hover {
+  background: rgb(236, 68, 63);
+}

@@ -1,0 +1,54 @@
+.table {
+  display: flex;
+  margin: 0%;
+  height: 45px;
+  padding: 0px;
+}
+.table li {
+  list-style-type: none;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: normal;
+  justify-content: space-evenly;
+  text-align: start;
+  padding-left: 13px;
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.table:hover {
+  background-color: rgba(199, 199, 199, 0.699);
+}
+
+.linked {
+  text-decoration: none;
+  color: #0275d8;
+}
+.linked:hover {
+  text-decoration: underline;
+}
+
+.table1 {
+  display: flex;
+  margin: 0%;
+  height: 45px;
+  padding: 0px;
+}
+.table1 li {
+  list-style-type: none;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: normal;
+  justify-content: space-evenly;
+  text-align: start;
+  padding-left: 13px;
+  padding-top: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  background-color: pink;
+}
+.table1:hover {
+  background-color: rgba(199, 199, 199, 0.699);
+}
