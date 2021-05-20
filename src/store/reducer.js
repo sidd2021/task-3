@@ -46,14 +46,15 @@ function reducer(state = initialState, action) {
   }
   if (action.type === "show") {
     let present = false;
+
     let arr = colors.map((ele) => {
-      if (ele[0] == action.key) {
-        present = true;
-      }
-      ele[1] = false;
+      // console.log(ele, ele[0], action.key);
       if (ele[0] === action.key) {
-        ele[1] = true;
+        ele[1] = !ele[1];
+      } else {
+        ele[1] = false;
       }
+
       return ele;
     });
     console.log(arr);
@@ -65,7 +66,7 @@ function reducer(state = initialState, action) {
       if (arr1[arr1.length - 1] === arr2[arr2.length - 1]) {
         let temp = state;
         delete temp["newdata"];
-        return { ...temp, buttons: false };
+        return { ...temp, buttons: true };
       } else {
         return { ...state, newdata: action.arr, buttons: true };
       }
@@ -79,12 +80,24 @@ function reducer(state = initialState, action) {
     return { ...state, [action.key]: action.value, buttons: false, color: arr };
   }
   if (action.type === "delete") {
+    colors = colors.filter((ele) => {
+      return ele[0] !== action.key;
+    });
+    console.log(colors);
+    let arr = colors.map((ele) => {
+      ele[1] = false;
+      return ele;
+    });
     let temp = state;
     delete temp[action.key];
-    return { ...temp, buttons: false };
+    return { ...temp, buttons: false, color: arr };
   }
   if (action.type === "cancle") {
-    return { ...state, buttons: false };
+    let arr = colors.map((ele) => {
+      ele[1] = false;
+      return ele;
+    });
+    return { ...state, buttons: false, color: arr };
   }
   return state;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 class Add extends Component {
@@ -35,6 +35,9 @@ class Add extends Component {
     var data = this.state;
     console.log(data);
     return this.props.saveToStore(data, this.state.key);
+  };
+  cancleHandler = () => {
+    return this.props.cancleHandler();
   };
   render() {
     // console.log();
@@ -84,6 +87,8 @@ class Add extends Component {
           </div>
         </div>
       );
+    } else {
+      return <Redirect to="/Cources" />;
     }
   }
 }

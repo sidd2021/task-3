@@ -39,7 +39,12 @@ class Add extends Component {
       data.length !== null
     ) {
       this.setState({ redirect: true });
-      return this.props.saveToStore(data);
+      return this.props.saveToStore({
+        title: this.state.title,
+        author: this.state.author,
+        category: this.state.title,
+        length: this.state.length,
+      });
     } else {
       this.setState({ redirect: false });
     }
