@@ -48,7 +48,6 @@ function reducer(state = initialState, action) {
     let present = false;
 
     let arr = colors.map((ele) => {
-      // console.log(ele, ele[0], action.key);
       if (ele[0] === action.key) {
         ele[1] = !ele[1];
       } else {
@@ -57,16 +56,16 @@ function reducer(state = initialState, action) {
 
       return ele;
     });
-    console.log(arr);
+    console.log(state.newdata);
     if (state.newdata === undefined) {
       return { ...state, newdata: action.arr, buttons: true };
     } else {
       let arr1 = Object.values(action.arr)[0];
       let arr2 = Object.values(state.newdata)[0];
+      console.log(arr1, arr2);
       if (arr1[arr1.length - 1] === arr2[arr2.length - 1]) {
-        let temp = state;
-        delete temp["newdata"];
-        return { ...temp, buttons: true };
+        delete state.newdata;
+        return { ...state, buttons: true };
       } else {
         return { ...state, newdata: action.arr, buttons: true };
       }

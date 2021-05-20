@@ -47,8 +47,14 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: clip;
-  background-color: pink;
+  background-color: rgba(188, 236, 126, 0.897);
+}
+.table1 li:active {
+  border: 2px solid black;
 }
 .table1:hover {
   background-color: rgba(199, 199, 199, 0.699);
+}
+.list:active {
+  border: 2px solid black;
 }

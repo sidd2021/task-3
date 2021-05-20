@@ -12,7 +12,9 @@ class Buttons extends Component {
     console.log(this.props.newdata);
   };
   DeleteHandler = () => {
-    return this.props.deleteKey(this.props.newdata.arr[4]);
+    return this.props.deleteKey(
+      this.props.newdata ? this.props.newdata.arr[4] : null
+    );
   };
   render() {
     return (

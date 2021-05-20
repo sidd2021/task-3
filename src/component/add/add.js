@@ -13,22 +13,26 @@ class Add extends Component {
     length: null,
     clear: true,
     redirect: false,
+    titleText: "",
+    authorText: "",
+    categoryText: "",
+    lengthText: "",
   };
   titleHandler = (event) => {
     const val = event.target.value;
-    this.setState({ title: val, clear: false });
+    this.setState({ title: val, clear: false, titleText: "" });
   };
   authorHandler = (event) => {
     const val = event.target.value;
-    this.setState({ author: val, clear: false });
+    this.setState({ author: val, clear: false, authorText: "" });
   };
   categoryHandler = (event) => {
     const val = event.target.value;
-    this.setState({ category: val, clear: false });
+    this.setState({ category: val, clear: false, categoryText: "" });
   };
   lengthHandler = (event) => {
     const val = event.target.value;
-    this.setState({ length: val, clear: false });
+    this.setState({ length: val, clear: false, lengthText: "" });
   };
   onSubmitHandler = () => {
     var data = this.state;
@@ -46,14 +50,51 @@ class Add extends Component {
         length: this.state.length,
       });
     } else {
-      this.setState({ redirect: false });
+      if (data.title === null) {
+        var title = "Required";
+      } else {
+        title = "";
+      }
+      if (data.author === null) {
+        var author = "Required";
+      } else {
+        author = "";
+      }
+      if (data.length === null) {
+        var length = "Required";
+      } else {
+        length = "";
+      }
+      if (data.category === null) {
+        var category = "Required";
+      } else {
+        category = "";
+      }
+      this.setState({
+        redirect: false,
+        titleText: title,
+        authorText: author,
+        categoryText: category,
+        lengthText: length,
+      });
     }
   };
   clearHandler = (event) => {
     event.preventDefault();
     let ele = document.getElementById("form");
     ele.reset();
-    this.setState({ title: null, author: null, category: null, length: null });
+    this.setState({
+      title: null,
+      author: null,
+      category: null,
+      length: null,
+      redirect: false,
+      clear: true,
+      titleText: "",
+      authorText: "",
+      categoryText: "",
+      lengthText: "",
+    });
   };
   render() {
     let redirect = null;
@@ -63,37 +104,39 @@ class Add extends Component {
     return (
       <div className="main">
         {redirect}
-        <form className="form" id="form" onSubmit={this.formSubmitHandler}>
-          <h1>Add</h1>
+        <span className="heading">Add</span>
+        <form
+          className="form"
+          id="form"
+          onSubmit={(event) => event.preventDefault()}
+        >
           <label>Title</label>
           <input
-            required
             placeholder="Title of cource"
             onChange={this.titleHandler}
           ></input>
+          <span className="alert">{this.state.titleText}</span>
 
           <label>Author</label>
-          <select required onChange={this.authorHandler}>
+          <select onChange={this.authorHandler}>
             <option></option>
             <option>Cory House</option>
             <option>Scot Allen</option>
             <option>Den Wahlin</option>
           </select>
-
+          <span className="alert"> {this.state.authorText}</span>
           <label>Category</label>
           <input
-            required
             placeholder="Category of the cource"
             onChange={this.categoryHandler}
           ></input>
-
+          <span className="alert">{this.state.categoryText}</span>
           <label>Length</label>
           <input
-            required
             placeholder="Length of the cource in minute and hours"
             onChange={this.lengthHandler}
           ></input>
-
+          <span className="alert">{this.state.lengthText}</span>
           <div className="buttons">
             <button className="b1" onClick={this.onSubmitHandler}>
               <FontAwesomeIcon className="icons" icon={faPaperPlane} />

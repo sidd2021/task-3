@@ -40,13 +40,13 @@ class Add extends Component {
     return this.props.cancleHandler();
   };
   render() {
-    // console.log();
     if (this.props.location.data !== undefined) {
       let title = this.props.location.data.arr[0];
       let author = this.props.location.data.arr[1];
       let category = this.props.location.data.arr[2];
       let length = this.props.location.data.arr[3];
-      // let key = this.props.location.data.arr[4];
+      console.log(this.props.newData);
+
       return (
         <div className="main">
           <div className="form" id="form" onSubmit={this.formSubmitHandler}>
@@ -96,6 +96,7 @@ const mapStateToProps = (state) => {
   console.log(state.buttons);
   return {
     buttons: state.buttons,
+    newData: state.newdata,
   };
 };
 const mapDispatchToProps = (dispatch) => {

@@ -28,7 +28,7 @@ class Show extends Component {
             this.clickHandler(key, data);
           }}
         >
-          <li>
+          <li className={classes.list}>
             <a
               className={classes.linked}
               href="https://www.pluralsight.com/courses/react-flux-building-applications"
@@ -36,9 +36,9 @@ class Show extends Component {
               {data[0]}
             </a>
           </li>
-          <li>{data[3]}</li>
-          <li>{data[2]}</li>
-          <li>{data[1]}</li>
+          <li className={classes.list}>{data[3]}</li>
+          <li className={classes.list}>{data[2]}</li>
+          <li className={classes.list}>{data[1]}</li>
         </ul>
       );
     }
